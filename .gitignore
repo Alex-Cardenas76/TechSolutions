@@ -1,0 +1,33 @@
+# Archivos de compilación y carpetas de salida
+############################################
+[Bb]in/
+[Oo]bj/
+
+# Archivos de Visual Studio que se ignoran automáticamente
+#########################################################
+*.log
+*.vspscc
+*.vssscc
+*.suo
+*.user
+*.userossc
+*.sln.docstates
+
+# Archivos de depuración y caché
+################################
+*.pdb
+*.ilk
+*.aps
+*.ncb
+*.dep
+*.obj
+*.exe
+*.dll
+
+# Visual Studio Code Cache
+.vs/
+.vscode/
+
+# Ignorar archivos de paquetes NuGet
+###################################
+[Pp]ackages/
