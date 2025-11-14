@@ -14,7 +14,8 @@ namespace CapaEntidad.Models
         public int IdRol { get; set; }
         public bool Estado { get; set; }
 
-        // Relación con Rol
+        // Relaciones
         public Rol Rol { get; set; }
+        public ICollection<Venta> Ventas { get; set; }
     }
 }

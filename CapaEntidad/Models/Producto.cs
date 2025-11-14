@@ -15,10 +15,12 @@ namespace CapaEntidad.Models
         public int Stock { get; set; }
 
         public int IdCategoria { get; set; }
-        public int IdProveedor { get; set; }
+        public int? IdProveedor { get; set; }
 
         // Relaciones
         public Categoria Categoria { get; set; }
         public Proveedor Proveedor { get; set; }
+        public ICollection<DetalleVenta> DetalleVentas { get; set; }
+        public ICollection<TransaccionStock> TransaccionesStock { get; set; }
     }
 }
