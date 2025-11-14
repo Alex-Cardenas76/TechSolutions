@@ -1,3 +1,5 @@
+using Capa_Presentacion1.Forms;
+
 namespace Capa_Presentacion1
 {
     internal static class Program
@@ -8,10 +10,8 @@ namespace Capa_Presentacion1
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.Run(new Login());
         }
     }
 }
