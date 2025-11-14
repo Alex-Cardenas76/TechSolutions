@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Microsoft.Data.SqlClient;
 using CapaEntidad.Models;
@@ -6,24 +6,25 @@ using CapaDatos.Database;
 
 namespace CapaDatos.Repositorio
 {
-    public class TipoMovimientoDAL
+    public class RolDAL
     {
-        public List<TipoMovimiento> ObtenerTodos()
+        public List<Rol> ObtenerTodos()
         {
-            List<TipoMovimiento> lista = new List<TipoMovimiento>();
+            List<Rol> lista = new List<Rol>();
             using (SqlConnection conn = ConexionBD.Instancia.CrearConexion())
             {
-                string query = "SELECT IdTipoMovimiento, NombreMovimiento FROM TipoMovimiento";
+                string query = "SELECT IdRol, NombreRol, Descripcion FROM Rol";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 conn.Open();
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        lista.Add(new TipoMovimiento
+                        lista.Add(new Rol
                         {
-                            IdTipoMovimiento = reader.GetInt32(0),
-                            NombreMovimiento = reader.GetString(1)
+                            IdRol = reader.GetInt32(0),
+                            NombreRol = reader.GetString(1),
+                            Descripcion = reader.IsDBNull(2) ? string.Empty : reader.GetString(2)
                         });
                     }
                 }
@@ -31,12 +32,12 @@ namespace CapaDatos.Repositorio
             return lista;
         }
 
-        public TipoMovimiento ObtenerPorId(int id)
+        public Rol ObtenerPorId(int id)
         {
-            TipoMovimiento tipo = null;
+            Rol rol = null;
             using (SqlConnection conn = ConexionBD.Instancia.CrearConexion())
             {
-                string query = "SELECT IdTipoMovimiento, NombreMovimiento FROM TipoMovimiento WHERE IdTipoMovimiento = @Id";
+                string query = "SELECT IdRol, NombreRol, Descripcion FROM Rol WHERE IdRol = @Id";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Id", id);
                 conn.Open();
@@ -44,37 +45,40 @@ namespace CapaDatos.Repositorio
                 {
                     if (reader.Read())
                     {
-                        tipo = new TipoMovimiento
+                        rol = new Rol
                         {
-                            IdTipoMovimiento = reader.GetInt32(0),
-                            NombreMovimiento = reader.GetString(1)
+                            IdRol = reader.GetInt32(0),
+                            NombreRol = reader.GetString(1),
+                            Descripcion = reader.IsDBNull(2) ? string.Empty : reader.GetString(2)
                         };
                     }
                 }
             }
-            return tipo;
+            return rol;
         }
 
-        public int Insertar(TipoMovimiento tipo)
+        public int Insertar(Rol rol)
         {
             using (SqlConnection conn = ConexionBD.Instancia.CrearConexion())
             {
-                string query = "INSERT INTO TipoMovimiento (NombreMovimiento) VALUES (@Nombre); SELECT SCOPE_IDENTITY();";
+                string query = "INSERT INTO Rol (NombreRol, Descripcion) VALUES (@Nombre, @Descripcion); SELECT SCOPE_IDENTITY();";
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@Nombre", tipo.NombreMovimiento);
+                cmd.Parameters.AddWithValue("@Nombre", rol.NombreRol);
+                cmd.Parameters.AddWithValue("@Descripcion", rol.Descripcion ?? (object)DBNull.Value);
                 conn.Open();
                 return Convert.ToInt32(cmd.ExecuteScalar());
             }
         }
 
-        public bool Actualizar(TipoMovimiento tipo)
+        public bool Actualizar(Rol rol)
         {
             using (SqlConnection conn = ConexionBD.Instancia.CrearConexion())
             {
-                string query = "UPDATE TipoMovimiento SET NombreMovimiento = @Nombre WHERE IdTipoMovimiento = @Id";
+                string query = "UPDATE Rol SET NombreRol = @Nombre, Descripcion = @Descripcion WHERE IdRol = @Id";
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@Id", tipo.IdTipoMovimiento);
-                cmd.Parameters.AddWithValue("@Nombre", tipo.NombreMovimiento);
+                cmd.Parameters.AddWithValue("@Id", rol.IdRol);
+                cmd.Parameters.AddWithValue("@Nombre", rol.NombreRol);
+                cmd.Parameters.AddWithValue("@Descripcion", rol.Descripcion ?? (object)DBNull.Value);
                 conn.Open();
                 return cmd.ExecuteNonQuery() > 0;
             }
@@ -84,7 +88,7 @@ namespace CapaDatos.Repositorio
         {
             using (SqlConnection conn = ConexionBD.Instancia.CrearConexion())
             {
-                string query = "DELETE FROM TipoMovimiento WHERE IdTipoMovimiento = @Id";
+                string query = "DELETE FROM Rol WHERE IdRol = @Id";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Id", id);
                 conn.Open();
