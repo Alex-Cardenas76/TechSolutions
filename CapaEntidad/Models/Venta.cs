@@ -19,5 +19,6 @@ namespace CapaEntidad.Models
         // Relaciones
         public Cliente Cliente { get; set; }
         public Usuario Usuario { get; set; }
+        public ICollection<DetalleVenta> DetalleVentas { get; set; }
     }
 }

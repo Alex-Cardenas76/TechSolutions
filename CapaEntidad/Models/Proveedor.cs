@@ -13,5 +13,8 @@ namespace CapaEntidad.Models
         public string Telefono { get; set; }
         public string Email { get; set; }
         public string Direccion { get; set; }
+
+        // Relaciones
+        public ICollection<Producto> Productos { get; set; }
     }
 }

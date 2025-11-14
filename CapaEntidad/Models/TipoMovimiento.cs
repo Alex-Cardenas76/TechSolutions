@@ -10,5 +10,8 @@ namespace CapaEntidad.Models
     {
         public int IdTipoMovimiento { get; set; }
         public string NombreMovimiento { get; set; }
+
+        // Relaciones
+        public ICollection<TransaccionStock> TransaccionesStock { get; set; }
     }
 }

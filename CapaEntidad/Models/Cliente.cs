@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System;
+using System.Collections.Generic;
+
 namespace CapaEntidad.Models
 {
     public class Cliente
@@ -14,5 +17,8 @@ namespace CapaEntidad.Models
         public string Email { get; set; }
         public string Telefono { get; set; }
         public string Direccion { get; set; }
+
+        // Relaciones
+        public ICollection<Venta> Ventas { get; set; }
     }
 }
