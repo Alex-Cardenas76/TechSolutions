@@ -20,6 +20,8 @@
 </div>
 
 ---
+Link Para Documentacion de diagramas UML y Figma:
+https://docs.google.com/document/d/1_NxNg9JveCqfa_HxinFtjvEBBJlT_9jbBiLbW6wxc7c/edit?usp=sharing
 
 ## 📋 Tabla de Contenidos
 
