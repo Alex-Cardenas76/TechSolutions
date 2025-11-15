@@ -50,50 +50,60 @@ namespace Capa_Presentacion1.Forms
             btnReportes.Visible = PermisosPorRol.PuedeVerReportes(idRol);
             btnUsuarios.Visible = PermisosPorRol.PuedeGestionarUsuarios(idRol);
 
-            // Reorganizar botones visibles
-            ReorganizarBotones();
+            // NO reorganizar aquí, se hará en el evento Load
         }
 
         private void ReorganizarBotones()
         {
-            // Posiciones iniciales
-            int x = 50;
-            int y = 50;
-            int espacioX = 250;
-            int espacioY = 110;
+            // Configuración de la cuadrícula
+            int anchoBoton = 200;
+            int espacioX = 250;  // Espacio entre botones (incluye el ancho del botón + margen)
+            int espacioY = 110;  // Espacio vertical entre filas
+            int columnas = 3;
+            int y = 50;  // Margen superior
 
-            // Posiciones fijas para cada botón
+            // Calcular el ancho total de la cuadrícula (3 columnas)
+            // Ancho total = (columnas * espacioX) - (espacioX - anchoBoton)
+            // Esto es: 2 espacios completos + 1 botón final
+            int anchoTotalCuadricula = (columnas - 1) * espacioX + anchoBoton;
+
+            // Calcular la posición X inicial para centrar la cuadrícula en el panel
+            int xInicial = (panelMenu.Width - anchoTotalCuadricula) / 2;
+
+            // Posiciones fijas para cada botón centradas en el panel
             // Fila 1: [Clientes] [Proveedores] [Salir]
             // Fila 2: [Categorías] [Productos] [Ventas]
             // Fila 3: [Movimientos] [Reportes] [Usuarios]
 
-            // Asignar posiciones fijas a cada botón (solo si es visible)
+            // Fila 1
             if (btnClientes.Visible)
-                btnClientes.Location = new System.Drawing.Point(x, y);
+                btnClientes.Location = new System.Drawing.Point(xInicial, y);
 
             if (btnProveedores.Visible)
-                btnProveedores.Location = new System.Drawing.Point(x + espacioX, y);
+                btnProveedores.Location = new System.Drawing.Point(xInicial + espacioX, y);
 
+            // Botón Salir SIEMPRE visible (primera fila, tercera columna)
+            btnSalir.Location = new System.Drawing.Point(xInicial + (2 * espacioX), y);
+
+            // Fila 2
             if (btnCategorias.Visible)
-                btnCategorias.Location = new System.Drawing.Point(x, y + espacioY);
+                btnCategorias.Location = new System.Drawing.Point(xInicial, y + espacioY);
 
             if (btnProductos.Visible)
-                btnProductos.Location = new System.Drawing.Point(x + espacioX, y + espacioY);
+                btnProductos.Location = new System.Drawing.Point(xInicial + espacioX, y + espacioY);
 
             if (btnVentas.Visible)
-                btnVentas.Location = new System.Drawing.Point(x + (2 * espacioX), y + espacioY);
+                btnVentas.Location = new System.Drawing.Point(xInicial + (2 * espacioX), y + espacioY);
 
+            // Fila 3
             if (btnMovimientos.Visible)
-                btnMovimientos.Location = new System.Drawing.Point(x, y + (2 * espacioY));
+                btnMovimientos.Location = new System.Drawing.Point(xInicial, y + (2 * espacioY));
 
             if (btnReportes.Visible)
-                btnReportes.Location = new System.Drawing.Point(x + espacioX, y + (2 * espacioY));
+                btnReportes.Location = new System.Drawing.Point(xInicial + espacioX, y + (2 * espacioY));
 
             if (btnUsuarios.Visible)
-                btnUsuarios.Location = new System.Drawing.Point(x + (2 * espacioX), y + (2 * espacioY));
-
-            // Botón Salir SIEMPRE visible y en posición fija (primera fila, tercera columna)
-            btnSalir.Location = new System.Drawing.Point(x + (2 * espacioX), y);
+                btnUsuarios.Location = new System.Drawing.Point(xInicial + (2 * espacioX), y + (2 * espacioY));
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
@@ -223,7 +233,8 @@ namespace Capa_Presentacion1.Forms
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
-
+            // Reorganizar botones cuando el formulario ya esté completamente cargado
+            ReorganizarBotones();
         }
     }
 }
