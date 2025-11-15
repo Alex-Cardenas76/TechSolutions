@@ -57,53 +57,79 @@ namespace Capa_Presentacion1.Forms
         {
             // Configuración de la cuadrícula
             int anchoBoton = 200;
-            int espacioX = 250;  // Espacio entre botones (incluye el ancho del botón + margen)
+            int espacioX = 250;  // Espacio entre botones
             int espacioY = 110;  // Espacio vertical entre filas
-            int columnas = 3;
-            int y = 50;  // Margen superior
+            int yInicial = 50;   // Margen superior
 
-            // Calcular el ancho total de la cuadrícula (3 columnas)
-            // Ancho total = (columnas * espacioX) - (espacioX - anchoBoton)
-            // Esto es: 2 espacios completos + 1 botón final
+            // Obtener lista de botones funcionales visibles (sin incluir Salir)
+            var botonesVisibles = new List<Button>();
+            if (btnClientes.Visible) botonesVisibles.Add(btnClientes);
+            if (btnProveedores.Visible) botonesVisibles.Add(btnProveedores);
+            if (btnCategorias.Visible) botonesVisibles.Add(btnCategorias);
+            if (btnProductos.Visible) botonesVisibles.Add(btnProductos);
+            if (btnVentas.Visible) botonesVisibles.Add(btnVentas);
+            if (btnMovimientos.Visible) botonesVisibles.Add(btnMovimientos);
+            if (btnReportes.Visible) botonesVisibles.Add(btnReportes);
+            if (btnUsuarios.Visible) botonesVisibles.Add(btnUsuarios);
+
+            int totalBotones = botonesVisibles.Count + 1; // +1 por el botón Salir
+
+            // Determinar número de columnas según cantidad de botones
+            int columnas;
+            if (totalBotones <= 3)
+                columnas = totalBotones; // 1 fila
+            else if (totalBotones <= 6)
+                columnas = 3; // 2 filas
+            else
+                columnas = 3; // 3 filas
+
+            // Calcular ancho total de la cuadrícula
             int anchoTotalCuadricula = (columnas - 1) * espacioX + anchoBoton;
 
-            // Calcular la posición X inicial para centrar la cuadrícula en el panel
+            // Calcular posición X inicial para centrar
             int xInicial = (panelMenu.Width - anchoTotalCuadricula) / 2;
 
-            // Posiciones fijas para cada botón centradas en el panel
-            // Fila 1: [Clientes] [Proveedores] [Salir]
-            // Fila 2: [Categorías] [Productos] [Ventas]
-            // Fila 3: [Movimientos] [Reportes] [Usuarios]
+            // Reorganizar botones visibles en cuadrícula
+            int indice = 0;
+            for (int i = 0; i < botonesVisibles.Count; i++)
+            {
+                int fila = indice / columnas;
+                int columna = indice % columnas;
 
-            // Fila 1
-            if (btnClientes.Visible)
-                btnClientes.Location = new System.Drawing.Point(xInicial, y);
+                // Reservar la última posición de la primera fila para el botón Salir
+                // Solo si hay más de 2 botones funcionales
+                if (fila == 0 && columna == columnas - 1 && botonesVisibles.Count > 2)
+                {
+                    indice++; // Saltar esta posición
+                    fila = indice / columnas;
+                    columna = indice % columnas;
+                }
 
-            if (btnProveedores.Visible)
-                btnProveedores.Location = new System.Drawing.Point(xInicial + espacioX, y);
+                int x = xInicial + (columna * espacioX);
+                int y = yInicial + (fila * espacioY);
 
-            // Botón Salir SIEMPRE visible (primera fila, tercera columna)
-            btnSalir.Location = new System.Drawing.Point(xInicial + (2 * espacioX), y);
+                botonesVisibles[i].Location = new System.Drawing.Point(x, y);
+                indice++;
+            }
 
-            // Fila 2
-            if (btnCategorias.Visible)
-                btnCategorias.Location = new System.Drawing.Point(xInicial, y + espacioY);
-
-            if (btnProductos.Visible)
-                btnProductos.Location = new System.Drawing.Point(xInicial + espacioX, y + espacioY);
-
-            if (btnVentas.Visible)
-                btnVentas.Location = new System.Drawing.Point(xInicial + (2 * espacioX), y + espacioY);
-
-            // Fila 3
-            if (btnMovimientos.Visible)
-                btnMovimientos.Location = new System.Drawing.Point(xInicial, y + (2 * espacioY));
-
-            if (btnReportes.Visible)
-                btnReportes.Location = new System.Drawing.Point(xInicial + espacioX, y + (2 * espacioY));
-
-            if (btnUsuarios.Visible)
-                btnUsuarios.Location = new System.Drawing.Point(xInicial + (2 * espacioX), y + (2 * espacioY));
+            // Posicionar botón Salir
+            if (totalBotones <= 3)
+            {
+                // Si hay 3 o menos botones, Salir va al final de la primera fila
+                int columnaSalir = botonesVisibles.Count;
+                btnSalir.Location = new System.Drawing.Point(
+                    xInicial + (columnaSalir * espacioX), 
+                    yInicial
+                );
+            }
+            else
+            {
+                // Si hay más de 3 botones, Salir va en la última posición de la primera fila
+                btnSalir.Location = new System.Drawing.Point(
+                    xInicial + ((columnas - 1) * espacioX), 
+                    yInicial
+                );
+            }
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
