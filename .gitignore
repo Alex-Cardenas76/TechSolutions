@@ -1,9 +1,9 @@
-# Archivos de compilación y carpetas de salida
+# Archivos de compilaciï¿½n y carpetas de salida
 ############################################
 [Bb]in/
 [Oo]bj/
 
-# Archivos de Visual Studio que se ignoran automáticamente
+# Archivos de Visual Studio que se ignoran automï¿½ticamente
 #########################################################
 *.log
 *.vspscc
@@ -13,7 +13,7 @@
 *.userossc
 *.sln.docstates
 
-# Archivos de depuración y caché
+# Archivos de depuraciï¿½n y cachï¿½
 ################################
 *.pdb
 *.ilk
@@ -31,3 +31,9 @@
 # Ignorar archivos de paquetes NuGet
 ###################################
 [Pp]ackages/
+
+Desarrollo_Capas.md
+insert.md
+ModelosMaestros.md
+PERMISOS_POR_ROL.md
+scriptBD.md
