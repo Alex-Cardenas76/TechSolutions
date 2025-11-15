@@ -56,37 +56,44 @@ namespace Capa_Presentacion1.Forms
 
         private void ReorganizarBotones()
         {
-            // Lista de todos los botones del menú (excepto Salir)
-            var botones = new List<Button> 
-            { 
-                btnClientes, btnProveedores, btnCategorias, 
-                btnProductos, btnVentas, btnMovimientos, btnReportes, btnUsuarios 
-            };
-
-            // Filtrar solo los visibles
-            var botonesVisibles = botones.Where(b => b.Visible).ToList();
-
             // Posiciones iniciales
             int x = 50;
             int y = 50;
             int espacioX = 250;
             int espacioY = 110;
-            int columnas = 3;
 
-            // Reorganizar botones visibles en una cuadrícula
-            for (int i = 0; i < botonesVisibles.Count; i++)
-            {
-                int fila = i / columnas;
-                int columna = i % columnas;
+            // Posiciones fijas para cada botón
+            // Fila 1: [Clientes] [Proveedores] [Salir]
+            // Fila 2: [Categorías] [Productos] [Ventas]
+            // Fila 3: [Movimientos] [Reportes] [Usuarios]
 
-                botonesVisibles[i].Location = new System.Drawing.Point(
-                    x + (columna * espacioX),
-                    y + (fila * espacioY)
-                );
-            }
+            // Asignar posiciones fijas a cada botón (solo si es visible)
+            if (btnClientes.Visible)
+                btnClientes.Location = new System.Drawing.Point(x, y);
 
-            // Mantener el botón Salir en su posición
-            btnSalir.Location = new System.Drawing.Point(550, 400);
+            if (btnProveedores.Visible)
+                btnProveedores.Location = new System.Drawing.Point(x + espacioX, y);
+
+            if (btnCategorias.Visible)
+                btnCategorias.Location = new System.Drawing.Point(x, y + espacioY);
+
+            if (btnProductos.Visible)
+                btnProductos.Location = new System.Drawing.Point(x + espacioX, y + espacioY);
+
+            if (btnVentas.Visible)
+                btnVentas.Location = new System.Drawing.Point(x + (2 * espacioX), y + espacioY);
+
+            if (btnMovimientos.Visible)
+                btnMovimientos.Location = new System.Drawing.Point(x, y + (2 * espacioY));
+
+            if (btnReportes.Visible)
+                btnReportes.Location = new System.Drawing.Point(x + espacioX, y + (2 * espacioY));
+
+            if (btnUsuarios.Visible)
+                btnUsuarios.Location = new System.Drawing.Point(x + (2 * espacioX), y + (2 * espacioY));
+
+            // Botón Salir SIEMPRE visible y en posición fija (primera fila, tercera columna)
+            btnSalir.Location = new System.Drawing.Point(x + (2 * espacioX), y);
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
