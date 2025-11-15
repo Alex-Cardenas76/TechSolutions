@@ -15,6 +15,7 @@
         private System.Windows.Forms.Button btnVentas;
         private System.Windows.Forms.Button btnMovimientos;
         private System.Windows.Forms.Button btnReportes;
+        private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Button btnSalir;
 
         protected override void Dispose(bool disposing)
@@ -41,6 +42,7 @@
             btnCategorias = new Button();
             btnProveedores = new Button();
             btnClientes = new Button();
+            btnUsuarios = new Button();
             panelSuperior.SuspendLayout();
             panelMenu.SuspendLayout();
             SuspendLayout();
@@ -101,6 +103,7 @@
             panelMenu.Controls.Add(btnCategorias);
             panelMenu.Controls.Add(btnProveedores);
             panelMenu.Controls.Add(btnClientes);
+            panelMenu.Controls.Add(btnUsuarios);
             panelMenu.Location = new Point(100, 120);
             panelMenu.Name = "panelMenu";
             panelMenu.Size = new Size(800, 450);
@@ -112,7 +115,7 @@
             btnSalir.FlatStyle = FlatStyle.Flat;
             btnSalir.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnSalir.ForeColor = Color.White;
-            btnSalir.Location = new Point(550, 350);
+            btnSalir.Location = new Point(550, 130);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(200, 60);
             btnSalir.TabIndex = 7;
@@ -217,6 +220,20 @@
             btnClientes.Text = "Clientes";
             btnClientes.UseVisualStyleBackColor = false;
             btnClientes.Click += btnClientes_Click;
+            // 
+            // btnUsuarios
+            // 
+            btnUsuarios.BackColor = Color.FromArgb(52, 73, 94);
+            btnUsuarios.FlatStyle = FlatStyle.Flat;
+            btnUsuarios.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnUsuarios.ForeColor = Color.White;
+            btnUsuarios.Location = new Point(550, 350);
+            btnUsuarios.Name = "btnUsuarios";
+            btnUsuarios.Size = new Size(200, 60);
+            btnUsuarios.TabIndex = 8;
+            btnUsuarios.Text = "Usuarios";
+            btnUsuarios.UseVisualStyleBackColor = false;
+            btnUsuarios.Click += btnUsuarios_Click;
             // 
             // MenuPrincipal
             // 

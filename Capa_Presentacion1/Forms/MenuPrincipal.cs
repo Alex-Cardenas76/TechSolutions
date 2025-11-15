@@ -48,6 +48,7 @@ namespace Capa_Presentacion1.Forms
             btnVentas.Visible = PermisosPorRol.PuedeRegistrarVentas(idRol);
             btnMovimientos.Visible = PermisosPorRol.PuedeGestionarMovimientosStock(idRol);
             btnReportes.Visible = PermisosPorRol.PuedeVerReportes(idRol);
+            btnUsuarios.Visible = PermisosPorRol.PuedeGestionarUsuarios(idRol);
 
             // Reorganizar botones visibles
             ReorganizarBotones();
@@ -59,7 +60,7 @@ namespace Capa_Presentacion1.Forms
             var botones = new List<Button> 
             { 
                 btnClientes, btnProveedores, btnCategorias, 
-                btnProductos, btnVentas, btnMovimientos, btnReportes 
+                btnProductos, btnVentas, btnMovimientos, btnReportes, btnUsuarios 
             };
 
             // Filtrar solo los visibles
@@ -165,6 +166,18 @@ namespace Capa_Presentacion1.Forms
             if (PermisosPorRol.PuedeVerReportes(_usuarioActual.IdRol))
             {
                 AbrirFormulario(new ReportesForm());
+            }
+            else
+            {
+                MostrarAccesoDenegado();
+            }
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            if (PermisosPorRol.PuedeGestionarUsuarios(_usuarioActual.IdRol))
+            {
+                AbrirFormulario(new UsuariosForm(_usuarioActual.IdUsuario));
             }
             else
             {
