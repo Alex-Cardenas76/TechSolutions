@@ -23,124 +23,125 @@
 
         private void InitializeComponent()
         {
-            this.panelPrincipal = new System.Windows.Forms.Panel();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.btnIngresar = new System.Windows.Forms.Button();
-            this.txtContrasena = new System.Windows.Forms.TextBox();
-            this.lblContrasena = new System.Windows.Forms.Label();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.lblUsuario = new System.Windows.Forms.Label();
-            this.lblTitulo = new System.Windows.Forms.Label();
-            this.panelPrincipal.SuspendLayout();
-            this.SuspendLayout();
+            panelPrincipal = new Panel();
+            btnSalir = new Button();
+            btnIngresar = new Button();
+            txtContrasena = new TextBox();
+            lblContrasena = new Label();
+            txtUsuario = new TextBox();
+            lblUsuario = new Label();
+            lblTitulo = new Label();
+            panelPrincipal.SuspendLayout();
+            SuspendLayout();
             // 
             // panelPrincipal
             // 
-            this.panelPrincipal.BackColor = System.Drawing.Color.White;
-            this.panelPrincipal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelPrincipal.Controls.Add(this.btnSalir);
-            this.panelPrincipal.Controls.Add(this.btnIngresar);
-            this.panelPrincipal.Controls.Add(this.txtContrasena);
-            this.panelPrincipal.Controls.Add(this.lblContrasena);
-            this.panelPrincipal.Controls.Add(this.txtUsuario);
-            this.panelPrincipal.Controls.Add(this.lblUsuario);
-            this.panelPrincipal.Controls.Add(this.lblTitulo);
-            this.panelPrincipal.Location = new System.Drawing.Point(150, 80);
-            this.panelPrincipal.Name = "panelPrincipal";
-            this.panelPrincipal.Size = new System.Drawing.Size(400, 300);
-            this.panelPrincipal.TabIndex = 0;
+            panelPrincipal.BackColor = Color.White;
+            panelPrincipal.BorderStyle = BorderStyle.FixedSingle;
+            panelPrincipal.Controls.Add(btnSalir);
+            panelPrincipal.Controls.Add(btnIngresar);
+            panelPrincipal.Controls.Add(txtContrasena);
+            panelPrincipal.Controls.Add(lblContrasena);
+            panelPrincipal.Controls.Add(txtUsuario);
+            panelPrincipal.Controls.Add(lblUsuario);
+            panelPrincipal.Controls.Add(lblTitulo);
+            panelPrincipal.Location = new Point(150, 80);
+            panelPrincipal.Name = "panelPrincipal";
+            panelPrincipal.Size = new Size(400, 300);
+            panelPrincipal.TabIndex = 0;
             // 
             // btnSalir
             // 
-            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
-            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(220, 230);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(120, 40);
-            this.btnSalir.TabIndex = 4;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            btnSalir.BackColor = Color.FromArgb(231, 76, 60);
+            btnSalir.FlatStyle = FlatStyle.Flat;
+            btnSalir.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnSalir.ForeColor = Color.White;
+            btnSalir.Location = new Point(220, 230);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(120, 40);
+            btnSalir.TabIndex = 4;
+            btnSalir.Text = "Salir";
+            btnSalir.UseVisualStyleBackColor = false;
+            btnSalir.Click += btnSalir_Click;
             // 
             // btnIngresar
             // 
-            this.btnIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
-            this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIngresar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnIngresar.ForeColor = System.Drawing.Color.White;
-            this.btnIngresar.Location = new System.Drawing.Point(60, 230);
-            this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(120, 40);
-            this.btnIngresar.TabIndex = 3;
-            this.btnIngresar.Text = "Ingresar";
-            this.btnIngresar.UseVisualStyleBackColor = false;
-            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
+            btnIngresar.BackColor = Color.FromArgb(46, 204, 113);
+            btnIngresar.FlatStyle = FlatStyle.Flat;
+            btnIngresar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnIngresar.ForeColor = Color.White;
+            btnIngresar.Location = new Point(60, 230);
+            btnIngresar.Name = "btnIngresar";
+            btnIngresar.Size = new Size(120, 40);
+            btnIngresar.TabIndex = 3;
+            btnIngresar.Text = "Ingresar";
+            btnIngresar.UseVisualStyleBackColor = false;
+            btnIngresar.Click += btnIngresar_Click;
             // 
             // txtContrasena
             // 
-            this.txtContrasena.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.txtContrasena.Location = new System.Drawing.Point(60, 170);
-            this.txtContrasena.Name = "txtContrasena";
-            this.txtContrasena.PasswordChar = '●';
-            this.txtContrasena.Size = new System.Drawing.Size(280, 27);
-            this.txtContrasena.TabIndex = 2;
+            txtContrasena.Font = new Font("Segoe UI", 11F);
+            txtContrasena.Location = new Point(60, 170);
+            txtContrasena.Name = "txtContrasena";
+            txtContrasena.PasswordChar = '●';
+            txtContrasena.Size = new Size(280, 27);
+            txtContrasena.TabIndex = 2;
             // 
             // lblContrasena
             // 
-            this.lblContrasena.AutoSize = true;
-            this.lblContrasena.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblContrasena.Location = new System.Drawing.Point(60, 145);
-            this.lblContrasena.Name = "lblContrasena";
-            this.lblContrasena.Size = new System.Drawing.Size(87, 19);
-            this.lblContrasena.TabIndex = 4;
-            this.lblContrasena.Text = "Contraseña:";
+            lblContrasena.AutoSize = true;
+            lblContrasena.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            lblContrasena.Location = new Point(60, 145);
+            lblContrasena.Name = "lblContrasena";
+            lblContrasena.Size = new Size(88, 19);
+            lblContrasena.TabIndex = 4;
+            lblContrasena.Text = "Contraseña:";
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.txtUsuario.Location = new System.Drawing.Point(60, 105);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(280, 27);
-            this.txtUsuario.TabIndex = 1;
+            txtUsuario.Font = new Font("Segoe UI", 11F);
+            txtUsuario.Location = new Point(60, 105);
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.Size = new Size(280, 27);
+            txtUsuario.TabIndex = 1;
             // 
             // lblUsuario
             // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblUsuario.Location = new System.Drawing.Point(60, 80);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(65, 19);
-            this.lblUsuario.TabIndex = 2;
-            this.lblUsuario.Text = "Usuario:";
+            lblUsuario.AutoSize = true;
+            lblUsuario.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            lblUsuario.Location = new Point(60, 80);
+            lblUsuario.Name = "lblUsuario";
+            lblUsuario.Size = new Size(64, 19);
+            lblUsuario.TabIndex = 2;
+            lblUsuario.Text = "Usuario:";
             // 
             // lblTitulo
             // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
-            this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.lblTitulo.Location = new System.Drawing.Point(100, 20);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(200, 30);
-            this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "TechSolutions";
-            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lblTitulo.AutoSize = true;
+            lblTitulo.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            lblTitulo.ForeColor = Color.FromArgb(52, 73, 94);
+            lblTitulo.Location = new Point(100, 20);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(155, 30);
+            lblTitulo.TabIndex = 0;
+            lblTitulo.Text = "TechSolutions";
+            lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.ClientSize = new System.Drawing.Size(700, 450);
-            this.Controls.Add(this.panelPrincipal);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Login";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login - TechSolutions";
-            this.panelPrincipal.ResumeLayout(false);
-            this.panelPrincipal.PerformLayout();
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(236, 240, 241);
+            ClientSize = new Size(700, 450);
+            Controls.Add(panelPrincipal);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "Login";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Login - TechSolutions";
+            Load += Login_Load;
+            panelPrincipal.ResumeLayout(false);
+            panelPrincipal.PerformLayout();
+            ResumeLayout(false);
         }
     }
 }

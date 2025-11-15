@@ -89,5 +89,10 @@ namespace Capa_Presentacion1.Forms
         {
             Application.Exit();
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

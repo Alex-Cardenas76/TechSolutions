@@ -15,6 +15,7 @@
         private System.Windows.Forms.Button btnVentas;
         private System.Windows.Forms.Button btnMovimientos;
         private System.Windows.Forms.Button btnReportes;
+        private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Button btnSalir;
 
         protected override void Dispose(bool disposing)
@@ -28,213 +29,230 @@
 
         private void InitializeComponent()
         {
-            this.panelSuperior = new System.Windows.Forms.Panel();
-            this.lblFechaHora = new System.Windows.Forms.Label();
-            this.lblUsuario = new System.Windows.Forms.Label();
-            this.lblTitulo = new System.Windows.Forms.Label();
-            this.panelMenu = new System.Windows.Forms.Panel();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.btnReportes = new System.Windows.Forms.Button();
-            this.btnMovimientos = new System.Windows.Forms.Button();
-            this.btnVentas = new System.Windows.Forms.Button();
-            this.btnProductos = new System.Windows.Forms.Button();
-            this.btnCategorias = new System.Windows.Forms.Button();
-            this.btnProveedores = new System.Windows.Forms.Button();
-            this.btnClientes = new System.Windows.Forms.Button();
-            this.panelSuperior.SuspendLayout();
-            this.panelMenu.SuspendLayout();
-            this.SuspendLayout();
+            panelSuperior = new Panel();
+            lblFechaHora = new Label();
+            lblUsuario = new Label();
+            lblTitulo = new Label();
+            panelMenu = new Panel();
+            btnSalir = new Button();
+            btnReportes = new Button();
+            btnMovimientos = new Button();
+            btnVentas = new Button();
+            btnProductos = new Button();
+            btnCategorias = new Button();
+            btnProveedores = new Button();
+            btnClientes = new Button();
+            btnUsuarios = new Button();
+            panelSuperior.SuspendLayout();
+            panelMenu.SuspendLayout();
+            SuspendLayout();
             // 
             // panelSuperior
             // 
-            this.panelSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.panelSuperior.Controls.Add(this.lblFechaHora);
-            this.panelSuperior.Controls.Add(this.lblUsuario);
-            this.panelSuperior.Controls.Add(this.lblTitulo);
-            this.panelSuperior.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSuperior.Location = new System.Drawing.Point(0, 0);
-            this.panelSuperior.Name = "panelSuperior";
-            this.panelSuperior.Size = new System.Drawing.Size(1000, 80);
-            this.panelSuperior.TabIndex = 0;
+            panelSuperior.BackColor = Color.FromArgb(52, 73, 94);
+            panelSuperior.Controls.Add(lblFechaHora);
+            panelSuperior.Controls.Add(lblUsuario);
+            panelSuperior.Controls.Add(lblTitulo);
+            panelSuperior.Dock = DockStyle.Top;
+            panelSuperior.Location = new Point(0, 0);
+            panelSuperior.Name = "panelSuperior";
+            panelSuperior.Size = new Size(1000, 80);
+            panelSuperior.TabIndex = 0;
             // 
             // lblFechaHora
             // 
-            this.lblFechaHora.AutoSize = true;
-            this.lblFechaHora.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.lblFechaHora.ForeColor = System.Drawing.Color.White;
-            this.lblFechaHora.Location = new System.Drawing.Point(750, 45);
-            this.lblFechaHora.Name = "lblFechaHora";
-            this.lblFechaHora.Size = new System.Drawing.Size(150, 20);
-            this.lblFechaHora.TabIndex = 2;
-            this.lblFechaHora.Text = "00/00/0000 00:00:00";
+            lblFechaHora.AutoSize = true;
+            lblFechaHora.Font = new Font("Segoe UI", 11F);
+            lblFechaHora.ForeColor = Color.White;
+            lblFechaHora.Location = new Point(750, 45);
+            lblFechaHora.Name = "lblFechaHora";
+            lblFechaHora.Size = new Size(143, 20);
+            lblFechaHora.TabIndex = 2;
+            lblFechaHora.Text = "00/00/0000 00:00:00";
             // 
             // lblUsuario
             // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.lblUsuario.ForeColor = System.Drawing.Color.White;
-            this.lblUsuario.Location = new System.Drawing.Point(750, 15);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(100, 20);
-            this.lblUsuario.TabIndex = 1;
-            this.lblUsuario.Text = "Usuario: Admin";
+            lblUsuario.AutoSize = true;
+            lblUsuario.Font = new Font("Segoe UI", 11F);
+            lblUsuario.ForeColor = Color.White;
+            lblUsuario.Location = new Point(750, 15);
+            lblUsuario.Name = "lblUsuario";
+            lblUsuario.Size = new Size(110, 20);
+            lblUsuario.TabIndex = 1;
+            lblUsuario.Text = "Usuario: Admin";
             // 
             // lblTitulo
             // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
-            this.lblTitulo.ForeColor = System.Drawing.Color.White;
-            this.lblTitulo.Location = new System.Drawing.Point(20, 20);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(350, 37);
-            this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "TechSolutions - Menú Principal";
+            lblTitulo.AutoSize = true;
+            lblTitulo.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+            lblTitulo.ForeColor = Color.White;
+            lblTitulo.Location = new Point(20, 20);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(413, 37);
+            lblTitulo.TabIndex = 0;
+            lblTitulo.Text = "TechSolutions - Menú Principal";
             // 
             // panelMenu
             // 
-            this.panelMenu.BackColor = System.Drawing.Color.White;
-            this.panelMenu.Controls.Add(this.btnSalir);
-            this.panelMenu.Controls.Add(this.btnReportes);
-            this.panelMenu.Controls.Add(this.btnMovimientos);
-            this.panelMenu.Controls.Add(this.btnVentas);
-            this.panelMenu.Controls.Add(this.btnProductos);
-            this.panelMenu.Controls.Add(this.btnCategorias);
-            this.panelMenu.Controls.Add(this.btnProveedores);
-            this.panelMenu.Controls.Add(this.btnClientes);
-            this.panelMenu.Location = new System.Drawing.Point(100, 120);
-            this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(800, 450);
-            this.panelMenu.TabIndex = 1;
+            panelMenu.BackColor = Color.White;
+            panelMenu.Controls.Add(btnSalir);
+            panelMenu.Controls.Add(btnReportes);
+            panelMenu.Controls.Add(btnMovimientos);
+            panelMenu.Controls.Add(btnVentas);
+            panelMenu.Controls.Add(btnProductos);
+            panelMenu.Controls.Add(btnCategorias);
+            panelMenu.Controls.Add(btnProveedores);
+            panelMenu.Controls.Add(btnClientes);
+            panelMenu.Controls.Add(btnUsuarios);
+            panelMenu.Location = new Point(100, 120);
+            panelMenu.Name = "panelMenu";
+            panelMenu.Size = new Size(800, 450);
+            panelMenu.TabIndex = 1;
             // 
             // btnSalir
             // 
-            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
-            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(550, 350);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(200, 60);
-            this.btnSalir.TabIndex = 7;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            btnSalir.BackColor = Color.FromArgb(231, 76, 60);
+            btnSalir.FlatStyle = FlatStyle.Flat;
+            btnSalir.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnSalir.ForeColor = Color.White;
+            btnSalir.Location = new Point(550, 130);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(200, 60);
+            btnSalir.TabIndex = 7;
+            btnSalir.Text = "Salir";
+            btnSalir.UseVisualStyleBackColor = false;
+            btnSalir.Click += btnSalir_Click;
             // 
             // btnReportes
             // 
-            this.btnReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(89)))), ((int)(((byte)(182)))));
-            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReportes.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnReportes.ForeColor = System.Drawing.Color.White;
-            this.btnReportes.Location = new System.Drawing.Point(300, 350);
-            this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Size = new System.Drawing.Size(200, 60);
-            this.btnReportes.TabIndex = 6;
-            this.btnReportes.Text = "Reportes";
-            this.btnReportes.UseVisualStyleBackColor = false;
-            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
+            btnReportes.BackColor = Color.FromArgb(155, 89, 182);
+            btnReportes.FlatStyle = FlatStyle.Flat;
+            btnReportes.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnReportes.ForeColor = Color.White;
+            btnReportes.Location = new Point(300, 350);
+            btnReportes.Name = "btnReportes";
+            btnReportes.Size = new Size(200, 60);
+            btnReportes.TabIndex = 6;
+            btnReportes.Text = "Reportes";
+            btnReportes.UseVisualStyleBackColor = false;
+            btnReportes.Click += btnReportes_Click;
             // 
             // btnMovimientos
             // 
-            this.btnMovimientos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.btnMovimientos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMovimientos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnMovimientos.ForeColor = System.Drawing.Color.White;
-            this.btnMovimientos.Location = new System.Drawing.Point(50, 350);
-            this.btnMovimientos.Name = "btnMovimientos";
-            this.btnMovimientos.Size = new System.Drawing.Size(200, 60);
-            this.btnMovimientos.TabIndex = 5;
-            this.btnMovimientos.Text = "Movimientos Stock";
-            this.btnMovimientos.UseVisualStyleBackColor = false;
-            this.btnMovimientos.Click += new System.EventHandler(this.btnMovimientos_Click);
+            btnMovimientos.BackColor = Color.FromArgb(52, 152, 219);
+            btnMovimientos.FlatStyle = FlatStyle.Flat;
+            btnMovimientos.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnMovimientos.ForeColor = Color.White;
+            btnMovimientos.Location = new Point(50, 350);
+            btnMovimientos.Name = "btnMovimientos";
+            btnMovimientos.Size = new Size(200, 60);
+            btnMovimientos.TabIndex = 5;
+            btnMovimientos.Text = "Movimientos Stock";
+            btnMovimientos.UseVisualStyleBackColor = false;
+            btnMovimientos.Click += btnMovimientos_Click;
             // 
             // btnVentas
             // 
-            this.btnVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
-            this.btnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVentas.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnVentas.ForeColor = System.Drawing.Color.White;
-            this.btnVentas.Location = new System.Drawing.Point(550, 240);
-            this.btnVentas.Name = "btnVentas";
-            this.btnVentas.Size = new System.Drawing.Size(200, 60);
-            this.btnVentas.TabIndex = 4;
-            this.btnVentas.Text = "Ventas";
-            this.btnVentas.UseVisualStyleBackColor = false;
-            this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
+            btnVentas.BackColor = Color.FromArgb(46, 204, 113);
+            btnVentas.FlatStyle = FlatStyle.Flat;
+            btnVentas.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnVentas.ForeColor = Color.White;
+            btnVentas.Location = new Point(550, 240);
+            btnVentas.Name = "btnVentas";
+            btnVentas.Size = new Size(200, 60);
+            btnVentas.TabIndex = 4;
+            btnVentas.Text = "Ventas";
+            btnVentas.UseVisualStyleBackColor = false;
+            btnVentas.Click += btnVentas_Click;
             // 
             // btnProductos
             // 
-            this.btnProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
-            this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProductos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnProductos.ForeColor = System.Drawing.Color.White;
-            this.btnProductos.Location = new System.Drawing.Point(300, 240);
-            this.btnProductos.Name = "btnProductos";
-            this.btnProductos.Size = new System.Drawing.Size(200, 60);
-            this.btnProductos.TabIndex = 3;
-            this.btnProductos.Text = "Productos";
-            this.btnProductos.UseVisualStyleBackColor = false;
-            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
+            btnProductos.BackColor = Color.FromArgb(241, 196, 15);
+            btnProductos.FlatStyle = FlatStyle.Flat;
+            btnProductos.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnProductos.ForeColor = Color.White;
+            btnProductos.Location = new Point(300, 240);
+            btnProductos.Name = "btnProductos";
+            btnProductos.Size = new Size(200, 60);
+            btnProductos.TabIndex = 3;
+            btnProductos.Text = "Productos";
+            btnProductos.UseVisualStyleBackColor = false;
+            btnProductos.Click += btnProductos_Click;
             // 
             // btnCategorias
             // 
-            this.btnCategorias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
-            this.btnCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCategorias.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnCategorias.ForeColor = System.Drawing.Color.White;
-            this.btnCategorias.Location = new System.Drawing.Point(50, 240);
-            this.btnCategorias.Name = "btnCategorias";
-            this.btnCategorias.Size = new System.Drawing.Size(200, 60);
-            this.btnCategorias.TabIndex = 2;
-            this.btnCategorias.Text = "Categorías";
-            this.btnCategorias.UseVisualStyleBackColor = false;
-            this.btnCategorias.Click += new System.EventHandler(this.btnCategorias_Click);
+            btnCategorias.BackColor = Color.FromArgb(230, 126, 34);
+            btnCategorias.FlatStyle = FlatStyle.Flat;
+            btnCategorias.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnCategorias.ForeColor = Color.White;
+            btnCategorias.Location = new Point(50, 240);
+            btnCategorias.Name = "btnCategorias";
+            btnCategorias.Size = new Size(200, 60);
+            btnCategorias.TabIndex = 2;
+            btnCategorias.Text = "Categorías";
+            btnCategorias.UseVisualStyleBackColor = false;
+            btnCategorias.Click += btnCategorias_Click;
             // 
             // btnProveedores
             // 
-            this.btnProveedores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProveedores.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnProveedores.ForeColor = System.Drawing.Color.White;
-            this.btnProveedores.Location = new System.Drawing.Point(300, 130);
-            this.btnProveedores.Name = "btnProveedores";
-            this.btnProveedores.Size = new System.Drawing.Size(200, 60);
-            this.btnProveedores.TabIndex = 1;
-            this.btnProveedores.Text = "Proveedores";
-            this.btnProveedores.UseVisualStyleBackColor = false;
-            this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
+            btnProveedores.BackColor = Color.FromArgb(52, 152, 219);
+            btnProveedores.FlatStyle = FlatStyle.Flat;
+            btnProveedores.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnProveedores.ForeColor = Color.White;
+            btnProveedores.Location = new Point(300, 130);
+            btnProveedores.Name = "btnProveedores";
+            btnProveedores.Size = new Size(200, 60);
+            btnProveedores.TabIndex = 1;
+            btnProveedores.Text = "Proveedores";
+            btnProveedores.UseVisualStyleBackColor = false;
+            btnProveedores.Click += btnProveedores_Click;
             // 
             // btnClientes
             // 
-            this.btnClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClientes.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnClientes.ForeColor = System.Drawing.Color.White;
-            this.btnClientes.Location = new System.Drawing.Point(50, 130);
-            this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(200, 60);
-            this.btnClientes.TabIndex = 0;
-            this.btnClientes.Text = "Clientes";
-            this.btnClientes.UseVisualStyleBackColor = false;
-            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
+            btnClientes.BackColor = Color.FromArgb(52, 152, 219);
+            btnClientes.FlatStyle = FlatStyle.Flat;
+            btnClientes.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnClientes.ForeColor = Color.White;
+            btnClientes.Location = new Point(50, 130);
+            btnClientes.Name = "btnClientes";
+            btnClientes.Size = new Size(200, 60);
+            btnClientes.TabIndex = 0;
+            btnClientes.Text = "Clientes";
+            btnClientes.UseVisualStyleBackColor = false;
+            btnClientes.Click += btnClientes_Click;
+            // 
+            // btnUsuarios
+            // 
+            btnUsuarios.BackColor = Color.FromArgb(52, 73, 94);
+            btnUsuarios.FlatStyle = FlatStyle.Flat;
+            btnUsuarios.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnUsuarios.ForeColor = Color.White;
+            btnUsuarios.Location = new Point(550, 350);
+            btnUsuarios.Name = "btnUsuarios";
+            btnUsuarios.Size = new Size(200, 60);
+            btnUsuarios.TabIndex = 8;
+            btnUsuarios.Text = "Usuarios";
+            btnUsuarios.UseVisualStyleBackColor = false;
+            btnUsuarios.Click += btnUsuarios_Click;
             // 
             // MenuPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.ClientSize = new System.Drawing.Size(1000, 600);
-            this.Controls.Add(this.panelMenu);
-            this.Controls.Add(this.panelSuperior);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.Name = "MenuPrincipal";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Menú Principal - TechSolutions";
-            this.panelSuperior.ResumeLayout(false);
-            this.panelSuperior.PerformLayout();
-            this.panelMenu.ResumeLayout(false);
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(236, 240, 241);
+            ClientSize = new Size(1000, 600);
+            Controls.Add(panelMenu);
+            Controls.Add(panelSuperior);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            Name = "MenuPrincipal";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Menú Principal - TechSolutions";
+            Load += MenuPrincipal_Load;
+            panelSuperior.ResumeLayout(false);
+            panelSuperior.PerformLayout();
+            panelMenu.ResumeLayout(false);
+            ResumeLayout(false);
         }
     }
 }

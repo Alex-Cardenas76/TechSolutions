@@ -264,5 +264,10 @@ namespace Capa_Presentacion1.Forms
             btnGuardar.Enabled = habilitar;
             btnCancelar.Enabled = habilitar;
         }
+
+        private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
