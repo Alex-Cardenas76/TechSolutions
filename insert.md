@@ -48,14 +48,13 @@ GO
 
 -- =============================================
 -- 2. INSERTAR USUARIOS
--- Contraseñas en texto plano (se hashearán en la app):
--- admin123, super123, vende123
--- Hash SHA-256 precalculado
+-- Contraseñas: admin123, super123, vende123
+-- Hash SHA-256 generado correctamente
 -- =============================================
 INSERT INTO Usuario (NombreUsuario, ContrasenaHash, IdRol, Estado) VALUES
-('admin', 0x240BE88617F18EFF8E2E3C0A3A3D89346E98AC13C8E5E4E3E8E5E4E3E8E5E4E3, 1, 1),
-('supervisor', 0x240BE88617F18EFF8E2E3C0A3A3D89346E98AC13C8E5E4E3E8E5E4E3E8E5E4E3, 2, 1),
-('vendedor', 0x240BE88617F18EFF8E2E3C0A3A3D89346E98AC13C8E5E4E3E8E5E4E3E8E5E4E3, 3, 1);
+('admin', 0x240BE518FABD2724DDB6F04EEB1DA5967448D7E831C08C8FA822809F74C720A9, 1, 1),
+('supervisor', 0x4E4C56E4A15F89F05C2F4C72613DA2A18C9665D4F0D6ACCE16415EB06F9BE776, 2, 1),
+('vendedor', 0x1AD6411C0C7D03159718FE5DB7230462688551A309AF849B5E03EDFC6650B030, 3, 1);
 GO
 
 PRINT '✓ 3 Usuarios insertados (admin, supervisor, vendedor)';
